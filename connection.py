@@ -14,7 +14,7 @@ try:
     cur = conn.cursor()
     
     print("Connection created")
-    cur.execute("select id from posts limit 5")
+    cur.execute("select count(id) from posts limit 5")
     print("selected ids")
     print(cur.rowcount)
     row = cur.fetchone()
