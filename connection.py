@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 import datetime as dt
 #
 #try:
-#    conn = psycopg2.connect("dbname='stackoverflow' user='Ankita' host='localhost' password='aj1312AJ'")
+#    conn = psycopg2.connect("dbname='stackoverflow' user='' host='localhost' password=''")
 #    cur = conn.cursor()
 #    
 #    print("Connection created")
