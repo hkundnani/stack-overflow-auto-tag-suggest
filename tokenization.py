@@ -51,7 +51,7 @@ i =0
 chunksize = 100000
 for chunk in pd.read_csv("E:/required_data.csv", chunksize=chunksize):
     process(chunk)
-    chunk.to_csv("E:/processed_data.csv", encoding='utf-8', index=False)
+    chunk.to_csv("E:/processed_data.csv", encoding='utf-8', mode = 'a', index=False)
     print("Chunk number"+str(i))
     i=i+1
     
