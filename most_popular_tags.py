@@ -7,22 +7,18 @@ Created on Thu Apr 05 20:12:17 2018
 import pandas as pd
 from collections import Counter
 
-chunksize = 10000
-i =0
-tag_final =[]
-
-for chunk in pd.read_csv("E:/processed_data.csv", chunksize=chunksize):
-    
-    tags = chunk["tags"].tolist()
-    tag_final = tag_final+tags
-    i=i+1
-    if(i==2):
-        break
-   # most_popular(tags)
-print(tags[0:5])
+chunksize = 100000
+count = 0
+tag_final = []
 
 
-mostcommon_tags= [item for item in Counter(tag_final).most_common(850)]
-print("top 850 most frequent tags in the dataset?:")
-print(str(mostcommon_tags))
+for chunk in pd.read_csv("processed_data.csv", chunksize=chunksize):
+	tag_list = (chunk['tags'].map(lambda tag: str(tag).split(','))).tolist()
+	tag_final = tag_final + [tag for tags in tag_list for tag in tags]
+	print ('Chunk {}'.format(count))
+	count += 1
 
+most_common_tags = dict([item for item in Counter(tag_final).most_common(850)])
+most_common_tags_df = pd.DataFrame(list(most_common_tags.items()), columns=['tag', 'frequency'])
+most_common_tags_df.to_csv("most_common_tags.csv", encoding='utf-8', mode = 'a', index=False)
+# print (most_common_tags_df)
