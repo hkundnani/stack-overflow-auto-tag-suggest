@@ -21,4 +21,4 @@ for chunk in pd.read_csv("processed_data.csv", chunksize=chunksize):
 most_common_tags = dict([item for item in Counter(tag_final).most_common(850)])
 most_common_tags_df = pd.DataFrame(list(most_common_tags.items()), columns=['tag', 'frequency'])
 most_common_tags_df.to_csv("most_common_tags.csv", encoding='utf-8', mode = 'a', index=False)
-# print (most_common_tags_df)
+
