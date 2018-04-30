@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Apr 20 11:49:12 2018
 
-@author: Ankita
-"""
 import pandas as pd
 from scipy.sparse import hstack
 from sklearn.preprocessing import LabelEncoder
