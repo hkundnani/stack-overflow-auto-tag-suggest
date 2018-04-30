@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 23 18:05:31 2018
 
-@author: Ankita
-"""
 
 import pandas as pd
 # REad Files: List of Tags and REsult of SVM
@@ -22,7 +18,7 @@ df_present['Accuracy'] = df_present.apply(lambda x: 1 if x['only_tag'] == x['Tag
 df_not['Accuracy'] = df_not.apply(lambda x: 1 if x['only_tag'] != x['Tag'] else 0, axis=1)
 df = df_present.append(df_not)
 
-# Accuracy if any tag among top 5 matches correct prediction for the question
+# Accuracy if any tag among top  matches correct prediction for the question
 accuracy = df.groupby('Question')['Accuracy'].agg(['sum'])
 accuracy = accuracy.sort_index()  
 accuracy['Question']= accuracy.index.values
