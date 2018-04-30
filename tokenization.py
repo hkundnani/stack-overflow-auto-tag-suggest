@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 03 19:08:55 2018
 
-@author: Ankita
-"""
 import pandas as pd
 import nltk
 from nltk.corpus import stopwords
