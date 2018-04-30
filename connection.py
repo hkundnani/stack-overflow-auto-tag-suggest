@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 02 15:53:45 2018
-
-@author: Ankita
-"""
 
 #Make connection with postgesql
 
