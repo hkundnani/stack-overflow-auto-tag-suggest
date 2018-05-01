@@ -40,13 +40,13 @@ def process(chunk):
 
 i = 0
 chunksize = 100000
-for chunk in pd.read_csv("test_dataset.csv", chunksize=chunksize):
+for chunk in pd.read_csv("test_dataset_new.csv", chunksize=chunksize):
     process(chunk)
     if i ==0:
         header = True
     else:
         header = False
-    chunk.to_csv("processed_data.csv", encoding='utf-8', mode = 'a', index=False, header = header)
+    chunk.to_csv("processed_data_test_new.csv", encoding='utf-8', mode = 'a', index=False, header = header)
     print("Chunk number"+str(i))
     i=i+1
     
