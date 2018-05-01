@@ -5,7 +5,7 @@ count = 0;
 
 # Read both original stack-overflow dataset and train dataset 
 so_df = pd.read_csv('stack-overflow.csv')
-train_df = pd.read_csv('train_dataset.csv')
+train_df = pd.read_csv('train_dataset_new.csv')
 train_id_list = train_df['id'].tolist()
 del train_df
 
@@ -39,5 +39,5 @@ for tag in pd.read_csv('most_common_tags.csv', chunksize=1):
 		header = True
 	else:
 		header = False 
-	final_dataset.to_csv("test_dataset.csv", encoding='utf-8', mode = 'a', index=False, header=header)
+	final_dataset.to_csv("test_dataset_new.csv", encoding='utf-8', mode = 'a', index=False, header=header)
 	count += 1
