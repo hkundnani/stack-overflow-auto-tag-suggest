@@ -1,7 +1,9 @@
 ### Suggesting tags automatically for Stack Overflow questions
 This project is an implemention of the paper "A Discriminative Model Approach for Suggesting Tags Automatically for Stack Overflow Questions"
 
-All the code files used in this project are mentioned below with a short description about the code implemented inside that particular file.  
+All the code files used in this project are mentioned below with a short description about the code implemented inside that particular file.
+##### **Note:
+This repository doesn't contain data files as they were too large and couldn't be commited due to less space in free github account. Two .csv (most_common_tags.csv, test_dataset.csv) files present in repository were not too large in size. Any file not mentioned in the readme file is not used in the overall development of project or may have been commited initialy and later not used. 
 
 ##### accuracy.py
 Code to calculate the accuracy for 
@@ -27,5 +29,5 @@ Code to create a list of tags and their frequency and take 850 most frequent tag
 ##### onevsone.py
 Code to implement a model using OnevsOne classification approach 
 
-##### tokenization.py
+##### tokenize_data.py
 Code to remove punctuations, URLs, stop words, and other unwanted characters from column 'body'
